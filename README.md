@@ -16,6 +16,11 @@ Or install from source after git clone:
 cd phasty
 pip install -e .
 ```
+Run tests:
+```bash
+pip install -e . [dev]
+python -m pytest --cov=phasty tests/
+```
 Uninstall:
 ```bash
 pip uninstall phasty
