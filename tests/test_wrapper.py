@@ -9,6 +9,7 @@ def test_format_options():
             "EM": True,
             "nrates": 4,
             "non_overlapping": False,
+            "alt_model": ["human:ratematrix", "mouse:ratematrix"],
         }
     ) == [
         "--tree",
@@ -18,6 +19,10 @@ def test_format_options():
         "--EM",
         "--nrates",
         "4",
+        "--alt-model",
+        "human:ratematrix",
+        "--alt-model",
+        "mouse:ratematrix",
     ]
 
 

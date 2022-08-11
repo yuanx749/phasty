@@ -9,6 +9,9 @@ def _format_options(kwargs: dict):
         if isinstance(v, bool):
             if v:
                 options.append(f"--{k.replace('_', '-')}")
+        elif isinstance(v, list):
+            for e in v:
+                options.extend([f"--{k.replace('_', '-')}", str(e)])
         else:
             options.extend([f"--{k.replace('_', '-')}", str(v)])
     return options
