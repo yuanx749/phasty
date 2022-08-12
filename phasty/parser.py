@@ -52,3 +52,6 @@ def parse_mod(mod_fname: str) -> List[Namespace]:
         mod_lst.append(_convert_section(mod_parser[f"{n}"]))
         n += 1
     return mod_lst
+
+
+__all__ = [name for name in dir() if not name.startswith("_")]

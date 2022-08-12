@@ -95,3 +95,5 @@ _COMMANDS = [
 
 for name in _COMMANDS:
     globals()[name.lower()] = _create_function(name)
+
+__all__ = [name for name in dir() if not name.startswith("_")]
