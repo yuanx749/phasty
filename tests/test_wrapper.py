@@ -27,4 +27,4 @@ def test_format_options():
 
 
 def test_phylofit():
-    assert wrapper.phylofit() is None
+    assert isinstance(wrapper.phylofit(), str)

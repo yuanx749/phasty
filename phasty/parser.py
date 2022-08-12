@@ -1,8 +1,8 @@
 """A module parse the output file format of PHAST."""
 
 import configparser
-from ast import literal_eval
 from argparse import Namespace
+from ast import literal_eval
 from io import StringIO
 from typing import List
 

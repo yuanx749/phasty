@@ -2,17 +2,17 @@
 A Python interface for PHAST (phylogenetic analysis with space/time models).
 
 ## Description
-[PHAST](http://compgen.cshl.edu/phast/) is a package consisting of command-line programs for comparative genomics. It supports several nucleotide substitution models. This package phasty provides Python wrappers for some major programs so that it is easier to integrate them into complicated workflows. It can also parse some file formats from plain text to more computer-friendly forms to help downstream analysis.
+[PHAST](http://compgen.cshl.edu/phast/) is a package consisting of command-line programs for comparative genomics. It supports several nucleotide substitution models. This package phasty provides Python wrappers for some major programs so that it is easier to integrate them into complicated workflows. It can also parse some files from plain text to more computer-friendly forms to help downstream analysis.
 
 ## Usage
 The design idea of phasty is to be robust and compatible with version changes of PHAST. Therefore, the signatures of functions are written in a general way. Please refer to the corresponding websites for detailed usage of specific options.
 
 ### Example
-Assume `hmrc.fa` exists in the current directory. After running `phylofit` and reading the output, the content of .mod file is stored in a list of objects holding attributes with proper data types. Each object represents a fitted model.
+Assume `hmrc.fa` exists in the current directory. After running `phylofit` and reading the .mod file, the content is stored in a list of objects holding attributes with proper data types. Each object represents a fitted model.
 ```Python
 from phasty import phylofit, parse_mod
 
-phylofit(
+output = phylofit(
     "hmrc.fa",
     tree="((human,(mouse,rat)),cow)",
     subst_mod="U2S",
@@ -40,7 +40,7 @@ pip install -e .
 ```
 Run tests:
 ```bash
-pip install -e . [dev]
+pip install -e .[dev]
 python -m pytest --cov=phasty tests/
 ```
 Uninstall:
