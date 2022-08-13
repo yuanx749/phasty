@@ -1,3 +1,6 @@
+[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/yuanx749/phasty.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/yuanx749/phasty/context:python)
+[![codecov](https://codecov.io/gh/yuanx749/phasty/branch/main/graph/badge.svg?token=NT7LUW1ECF)](https://codecov.io/gh/yuanx749/phasty)
+
 # phasty
 A Python interface for PHAST (phylogenetic analysis with space/time models).
 
