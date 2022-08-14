@@ -93,7 +93,7 @@ _COMMANDS = [
     "tree_doctor",
 ]
 
-for name in _COMMANDS:
-    globals()[name.lower()] = _create_function(name)
+for _name in _COMMANDS:
+    globals()[_name.lower()] = _create_function(_name)
 
 __all__ = [name for name in dir() if not name.startswith("_")]
