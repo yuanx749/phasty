@@ -1,19 +1,20 @@
 """A module wraps the major programs of PHAST."""
 
 import subprocess
+from itertools import chain
 
 
 def _format_options(kwargs: dict):
     options = []
     for k, v in kwargs.items():
+        s = f"--{k.replace('_', '-')}"
         if isinstance(v, bool):
             if v:
-                options.append(f"--{k.replace('_', '-')}")
+                options.append(s)
         elif isinstance(v, list):
-            for e in v:
-                options.extend([f"--{k.replace('_', '-')}", str(e)])
+            options.extend(chain.from_iterable(zip([s] * len(v), v)))
         else:
-            options.extend([f"--{k.replace('_', '-')}", str(v)])
+            options.extend([s, str(v)])
     return options
 
 
@@ -42,8 +43,6 @@ def _create_function(name: str):
 
     return command
 
-
-# phylofit = _create_function("phyloFit")
 
 _COMMANDS = [
     "all_dists",

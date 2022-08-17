@@ -38,19 +38,14 @@ def parse_mod(mod_fname: str) -> List[Namespace]:
         A list of `Namespace` objects represents the data of the input file.
     """
     with open(mod_fname) as f:
-        lst = f.readlines()
-    for i, row in enumerate(lst):
-        if row[0] == "-":
-            # add indentation before the first element for configparser
-            lst[i] = " " + row
-    mod_str = "".join(lst)
+        mod_str = f.read()
+    # add indentation before the first element for configparser
+    mod_str = mod_str.replace("\n-", "\n -")
     mod_parser = configparser.ConfigParser(delimiters=":")
     mod_lst = []
-    n = 0
-    for mod in mod_str.split("\n\n"):
+    for n, mod in enumerate(mod_str.split("\n\n")):
         mod_parser.read_string(f"[{n}]\n" + mod)
         mod_lst.append(_convert_section(mod_parser[f"{n}"]))
-        n += 1
     return mod_lst
 
 
