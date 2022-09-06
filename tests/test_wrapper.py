@@ -1,3 +1,5 @@
+import pytest
+
 from phasty import wrapper
 
 
@@ -26,5 +28,13 @@ def test_format_options():
     ]
 
 
+@pytest.mark.parametrize(
+    "s, expected",
+    [("makeHKY", "make_hky"), ("pbsScoreMatrix", "pbs_score_matrix")],
+)
+def test_snake_case(s, expected):
+    assert wrapper._snake_case(s) == expected
+
+
 def test_phylofit():
-    assert isinstance(wrapper.phylofit(), str)
+    assert isinstance(wrapper.phylo_fit(), str)

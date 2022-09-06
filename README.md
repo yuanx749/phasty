@@ -1,3 +1,4 @@
+[![PyPI version](https://badge.fury.io/py/phasty.svg)](https://badge.fury.io/py/phasty)
 [![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/yuanx749/phasty.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/yuanx749/phasty/context:python)
 [![codecov](https://codecov.io/gh/yuanx749/phasty/branch/main/graph/badge.svg?token=NT7LUW1ECF)](https://codecov.io/gh/yuanx749/phasty)
 
@@ -11,11 +12,11 @@ A Python interface for PHAST (phylogenetic analysis with space/time models).
 The design idea of phasty is to be robust and compatible with version changes of PHAST. Therefore, the signatures of functions are written in a general way. Please refer to the corresponding websites for detailed usage of specific options.
 
 ### Example
-Assume `hmrc.fa` exists in the current directory. After running `phylofit` and reading the .mod file, the content is stored in a list of objects holding attributes with proper data types. Each object represents a fitted model.
+Assume `hmrc.fa` exists in the current directory. After running `phylo_fit` and reading the .mod file, the content is stored in a list of objects holding attributes with proper data types. Each object represents a fitted model.
 ```Python
-from phasty import phylofit, parse_mod
+from phasty import phylo_fit, parse_mod
 
-output = phylofit(
+output = phylo_fit(
     "hmrc.fa",
     tree="((human,(mouse,rat)),cow)",
     subst_mod="U2S",

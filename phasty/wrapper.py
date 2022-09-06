@@ -1,5 +1,6 @@
 """A module wraps the major programs of PHAST."""
 
+import re
 import subprocess
 from itertools import chain
 
@@ -42,6 +43,10 @@ def _create_function(name: str):
         return proc.stdout if "proc" in locals() else ""
 
     return command
+
+
+def _snake_case(name: str):
+    return re.sub(r"([A-Z]+)", r"_\1", name).lower()
 
 
 _COMMANDS = [
@@ -93,6 +98,6 @@ _COMMANDS = [
 ]
 
 for _name in _COMMANDS:
-    globals()[_name.lower()] = _create_function(_name)
+    globals()[_snake_case(_name)] = _create_function(_name)
 
 __all__ = [name for name in dir() if not name.startswith("_")]
