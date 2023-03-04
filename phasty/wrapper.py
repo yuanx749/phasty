@@ -2,7 +2,8 @@
 
 import re
 import subprocess
-from itertools import chain
+import types
+from itertools import chain as _chain
 
 
 def _format_options(kwargs: dict):
@@ -13,7 +14,7 @@ def _format_options(kwargs: dict):
             if v:
                 options.append(s)
         elif isinstance(v, list):
-            options.extend(chain.from_iterable(zip([s] * len(v), v)))
+            options.extend(_chain.from_iterable(zip([s] * len(v), v)))
         else:
             options.extend([s, str(v)])
     return options
@@ -100,4 +101,8 @@ _COMMANDS = [
 for _name in _COMMANDS:
     globals()[_snake_case(_name)] = _create_function(_name)
 
-__all__ = [name for name in dir() if not name.startswith("_")]
+__all__ = [
+    name
+    for name, value in globals().items()
+    if not (name.startswith("_") or isinstance(value, types.ModuleType))
+]

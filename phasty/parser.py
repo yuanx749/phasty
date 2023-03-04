@@ -49,4 +49,4 @@ def parse_mod(mod_fname: str) -> List[Namespace]:
     return mod_lst
 
 
-__all__ = [name for name in dir() if not name.startswith("_")]
+__all__ = ["parse_mod"]

@@ -6,6 +6,7 @@
 *.ss
 *.exptotsub
 *.wig
+docs/generated
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
