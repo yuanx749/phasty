@@ -1,7 +1,7 @@
 # phasty
 
 [![PyPI version](https://badge.fury.io/py/phasty.svg)](https://badge.fury.io/py/phasty)
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/7baee8cdd9784bfdbdfc5840260426b5)](https://www.codacy.com/gh/yuanx749/phasty/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=yuanx749/phasty&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/319819871685432882de8aa62c58fec0)](https://app.codacy.com/gh/yuanx749/phasty/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 [![codecov](https://codecov.io/gh/yuanx749/phasty/branch/main/graph/badge.svg?token=NT7LUW1ECF)](https://codecov.io/gh/yuanx749/phasty)
 
 A Python interface for PHAST (phylogenetic analysis with space/time models).
