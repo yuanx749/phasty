@@ -19,6 +19,7 @@ templates_path = ["_templates"]
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 html_theme = "furo"
-html_static_path = ["_static"]
+
+autodoc_mock_imports = ["numpy"]
 
 autosummary_ignore_module_all = False  # use the order in __all__
